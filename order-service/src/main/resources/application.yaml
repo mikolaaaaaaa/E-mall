@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+  servlet:
+    contextPath: /order/api
+
+spring:
+
+  datasource:
+    username: postgres
+    password: password
+    url: jdbc:postgresql://localhost:5433/e-mall
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: off
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    tags-sorter: alpha
+    operations-sorter: alpha
