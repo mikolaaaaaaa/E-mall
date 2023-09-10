@@ -90,4 +90,4 @@
 
 
 - Swagger UI client-сервиса доступен по URL - `http://localhost:8081/client/api/swagger-ui`
-- Swagger UI order-сервиса доступен по URL - `http://localhost:8081/order/api/swagger-ui`
+- Swagger UI order-сервиса доступен по URL - `http://localhost:8082/order/api/swagger-ui`
