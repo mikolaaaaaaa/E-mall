@@ -1,34 +1,22 @@
 version: '1'
 services:
   e-mall_db:
-    networks:
-    - e-mall
     image: e-mall_db
     ports:
       - "5432:5432"
   client-service:
-    networks:
-    - e-mall
     depends_on:
       - e-mall_db
     image: client-service-image
     ports:
       - "8081:8081"
   order-service:
-    networks:
-    - e-mall
     depends_on:
       - e-mall_db
     image: order-service-image
     ports:
       - "8082:8082"
   eureka-server:
-    networks:
-    - e-mall
     image: eureka-server-image
     ports:
       - "8761:8761"
-
-networks:
-  e-mall:
-

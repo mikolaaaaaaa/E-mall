@@ -22,11 +22,13 @@ spring:
       path: /swagger-ui
       tags-sorter: alpha
       operations-sorter: alpha
-
+  cloud:
+    compatibility-verifier:
+      enabled: false
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     serviceUrl:
       defaultZone: http://eureka-server:8761/eureka
   instance:

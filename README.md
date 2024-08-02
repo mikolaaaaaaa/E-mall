@@ -88,6 +88,6 @@
    docker-compose up
    ```
 
-
-- Swagger UI client-сервиса доступен по URL - `http://localhost:8081/client/api/swagger-ui`
-- Swagger UI order-сервиса доступен по URL - `http://localhost:8082/order/api/swagger-ui`
+- Eureka server доступен по URL - `http://localhost:8761/`
+- Swagger UI client-сервиса доступен по URL - `http://localhost:8081/client/api/swagger-ui/index.html`
+- Swagger UI order-сервиса доступен по URL - `http://localhost:8082/order/api/swagger-ui/index.html`
