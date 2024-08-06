@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class OrderDTO {
-    private Long id;
+    private String id;
     private String description;
     private OrderStatus status;
     private String clientId;

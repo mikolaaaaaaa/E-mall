@@ -25,6 +25,11 @@ spring:
   cloud:
     compatibility-verifier:
       enabled: false
+  kafka:
+    bootstrap-servers: kafka:9092
+    group-id: orderGroup
+    consumer:
+      auto-offset-reset: earliest
 eureka:
   client:
     register-with-eureka: true

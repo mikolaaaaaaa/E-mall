@@ -6,6 +6,14 @@ server:
 spring:
   application:
     name: order-service
+  data:
+    mongodb:
+      authentication-database: admin
+      username: mongo
+      password: password
+      database: emall
+      port: 27017
+      host: mongo
   datasource:
     username: postgres
     password: password
@@ -25,6 +33,16 @@ spring:
   cloud:
     compatibility-verifier:
       enabled: false
+  kafka:
+    bootstrap-servers: kafka:9092
+    group-id: orderGroup
+    consumer:
+      auto-offset-reset: earliest
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
 
 eureka:
   client:

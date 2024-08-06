@@ -2,7 +2,7 @@ package by.mikola.order.mapper;
 
 import by.mikola.order.dto.order.OrderDTO;
 import by.mikola.order.dto.order.OrderUpdateRequest;
-import by.mikola.order.entity.order.Order;
+import by.mikola.order.entity.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
