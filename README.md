@@ -59,7 +59,7 @@
    директории `docker/postgres`:
 
    ```bash
-   docker build -t e-mall_db ./docker/postgresql/
+   docker build -t e-mall-db ./docker/postgresql/
    ```
 5. Создайте Docker-образ client-сервиса для приложения, используя Dockerfile, находящийся в
     директории `client/`:

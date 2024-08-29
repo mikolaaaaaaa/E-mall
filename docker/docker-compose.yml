@@ -1,7 +1,7 @@
 version: '1'
 services:
-  e-mall_db:
-    image: e-mall_db
+  e-mall-db:
+    image: e-mall-db
     ports:
       - "5432:5432"
   mongo:
@@ -13,13 +13,13 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: password
   client-service:
     depends_on:
-      - e-mall_db
+      - e-mall-db
     image: client-service-image
     ports:
       - "8081:8081"
   order-service:
     depends_on:
-      - e-mall_db
+      - e-mall-db
     image: order-service-image
     ports:
       - "8082:8082"

@@ -17,7 +17,7 @@ spring:
   datasource:
     username: postgres
     password: password
-    url: jdbc:postgresql://e-mall_db:5432/e-mall
+    url: jdbc:postgresql://e-mall-db:5432/e-mall
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
