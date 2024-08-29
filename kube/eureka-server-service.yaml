@@ -7,6 +7,7 @@ metadata:
   labels:
     io.kompose.service: eureka-server
   name: eureka-server
+  namespace: emall
 spec:
   ports:
     - name: "8761"
