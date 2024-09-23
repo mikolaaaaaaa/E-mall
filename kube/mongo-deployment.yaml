@@ -29,7 +29,7 @@ spec:
               value: mongo
           image: mongo:latest
           name: mongo
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 27017
               protocol: TCP

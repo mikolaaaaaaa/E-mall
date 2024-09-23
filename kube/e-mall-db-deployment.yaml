@@ -22,9 +22,16 @@ spec:
         io.kompose.service: e-mall-db
     spec:
       containers:
-        - image: e-mall-db
+        - env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: password
+            - name: POSTGRES_DB
+              value: e-mall
+          image: postgres:latest
           name: e-mall-db
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432
               protocol: TCP

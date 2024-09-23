@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/kafka")
-public class KafkaTestController {
+@RequestMapping("/api/order")
+public class OrderControllerImpl {
 
     @Autowired
     private KafkaProducerServiceImpl kafkaProducerService;
 
-    @PostMapping("/publish")
+    @PostMapping("/createOrder")
     public void sendMessageToKafkaTopic(@RequestBody OrderCreateRequest orderCreateRequest) {
         kafkaProducerService.sendMessage(orderCreateRequest);
     }

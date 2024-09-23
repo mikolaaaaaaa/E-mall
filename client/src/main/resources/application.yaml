@@ -19,7 +19,7 @@ spring:
     open-in-view: off
   springdoc:
     swagger-ui:
-      path: /swagger-ui
+      use-root-path: true
       tags-sorter: alpha
       operations-sorter: alpha
   cloud:
@@ -28,8 +28,6 @@ spring:
   kafka:
     bootstrap-servers: kafka:9092
     group-id: orderGroup
-    consumer:
-      auto-offset-reset: earliest
 eureka:
   client:
     register-with-eureka: true
@@ -39,3 +37,19 @@ eureka:
   instance:
     hostname: localhost
     preferIpAddress: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+

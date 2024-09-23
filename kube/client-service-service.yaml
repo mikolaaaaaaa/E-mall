@@ -10,7 +10,7 @@ metadata:
   namespace: emall
 spec:
   ports:
-    - name: "8081"
+    - name: "client"
       port: 8081
       targetPort: 8081
   selector:

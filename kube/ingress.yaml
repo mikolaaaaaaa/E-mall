@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: emall-demo-http
+  namespace: emall
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
+spec:
+  rules:
+    - host: client.mikola.by
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: client-service
+                port:
+                  name: 'client'

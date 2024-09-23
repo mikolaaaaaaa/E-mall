@@ -1,9 +1,10 @@
 package by.mikola.client.config;
 
+import by.mikola.client.configprops.KafkaConfigProperties;
 import by.mikola.client.dto.OrderCreateRequest;
+import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -15,17 +16,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
+@RequiredArgsConstructor
 public class KafkaProducerConfig {
 
-    @Value(value = "${spring.kafka.bootstrap-servers}")
-    private String bootstrapAddress;
+    private final KafkaConfigProperties kafkaConfigProperties;
 
     @Bean
     public ProducerFactory<String, OrderCreateRequest> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                bootstrapAddress);
+                kafkaConfigProperties.getBootstrapServers());
+        configProps.put(
+                ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG,
+                true
+        );
         configProps.put(
                 ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 StringSerializer.class);

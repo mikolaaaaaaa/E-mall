@@ -28,4 +28,16 @@ spec:
           ports:
             - containerPort: 8082
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /order/api/actuator/health
+              port: 8082
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /order/api/actuator/health
+              port: 8082
+            initialDelaySeconds: 10
+            periodSeconds: 5
       restartPolicy: Always

@@ -29,7 +29,7 @@ spec:
               value: "2000"
           image: confluentinc/cp-zookeeper:latest
           name: zookeeper
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 2181
               protocol: TCP

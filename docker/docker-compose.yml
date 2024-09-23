@@ -1,7 +1,11 @@
 version: '1'
 services:
   e-mall-db:
-    image: e-mall-db
+    image: postgres
+    environment:
+      POSTGRES_DB: "e-mall"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
     ports:
       - "5432:5432"
   mongo:
@@ -17,6 +21,8 @@ services:
     image: client-service-image
     ports:
       - "8081:8081"
+      - "9010:9010"
+      - "9011:9011"
   order-service:
     depends_on:
       - e-mall-db

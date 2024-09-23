@@ -38,7 +38,7 @@ spec:
               value: zookeeper:2181
           image: confluentinc/cp-kafka:latest
           name: kafka
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9092
               protocol: TCP
