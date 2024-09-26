@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: emall-config
+  namespace: emall
+data:
+  POSTGRES_DB: 'e-mall'
+  POSTGRES_PASSWORD: 'password'
+  POSTGRES_USER: 'postgres'
+  CLIENT_KAFKA_GROUP: 'orderGroup'
+  MONGO_DB: 'e-mall'
+  MONGO_PASSWORD: 'password'
+  MONGO_USER: 'mongo'
+  MONGO_PORT: '27017'
+  MONGO_HOST: 'mongo'
+  ORDER_KAFKA_GROUP: 'orderGroup'

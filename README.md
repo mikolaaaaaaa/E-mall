@@ -81,6 +81,8 @@
 7. Запустите приложение с помощью Docker Compose командой:
 
    ```bash
+   set -a
+   source .env 
    docker-compose up
    ```
 
@@ -90,4 +92,10 @@
 
 ### K8s (minikube)
 
+1. Выполните 5 пунктов из инструкции для Docker
 
+2. Запустите скрипт deploy.sh прежде дав ему права на выполнение
+   ```bash
+   chmod +x deploy.sh
+   ./deploy.sh
+   ```

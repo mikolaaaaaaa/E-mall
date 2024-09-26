@@ -7,9 +7,9 @@ spring:
   application:
     name: client-service
   datasource:
-    username: postgres
-    password: password
-    url: jdbc:postgresql://e-mall-db:5432/e-mall
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://e-mall-db:5432/${POSTGRES_DB}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -27,7 +27,7 @@ spring:
       enabled: false
   kafka:
     bootstrap-servers: kafka:9092
-    group-id: orderGroup
+    group-id: ${CLIENT_KAFKA_GROUP}
 eureka:
   client:
     register-with-eureka: true
