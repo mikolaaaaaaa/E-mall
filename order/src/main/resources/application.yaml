@@ -38,6 +38,8 @@ spring:
     group-id: ${ORDER_KAFKA_GROUP}
     consumer:
       properties:
+        isolation:
+          level: ${ORDER_KAFKA_CONSUMER_ISOLATION_LEVEL}
         spring:
           json:
             trusted:

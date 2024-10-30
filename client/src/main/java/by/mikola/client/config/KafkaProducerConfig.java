@@ -37,7 +37,11 @@ public class KafkaProducerConfig {
         configProps.put(
                 ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
                 JsonSerializer.class);
-        return new DefaultKafkaProducerFactory<>(configProps, new StringSerializer(), new JsonSerializer<>());
+        var producerFactory = new DefaultKafkaProducerFactory<String, OrderCreateRequest>(configProps,
+                        new StringSerializer(),
+                        new JsonSerializer<>());
+        producerFactory.setTransactionIdPrefix("emall-");
+        return producerFactory;
     }
 
     @Bean

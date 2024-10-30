@@ -21,13 +21,16 @@ public class KafkaProducerServiceImpl {
             = LoggerFactory.getLogger(KafkaProducerServiceImpl.class);
 
     public void sendMessage(OrderCreateRequest orderCreateRequest) {
-        CompletableFuture<SendResult<String, OrderCreateRequest>> future = kafkaTemplate.send(KafkaTopicConfig.ORDER_TOPIC, orderCreateRequest);
-        future.whenComplete((result, ex) -> {
-            if (ex == null) {
-                logger.info("Order {} was sent", result);
-            } else {
-                logger.info("Order {} wasn't sent", ex.getMessage());
-            }
+        kafkaTemplate.executeInTransaction( kt -> {
+            CompletableFuture<SendResult<String, OrderCreateRequest>> future = kafkaTemplate.send(KafkaTopicConfig.ORDER_TOPIC, orderCreateRequest);
+            future.whenComplete((result, ex) -> {
+                if (ex == null) {
+                    logger.info("Order {} was sent", result);
+                } else {
+                    logger.info("Order {} wasn't sent", ex.getMessage());
+                }
+            });
+            return future;
         });
     }
 }

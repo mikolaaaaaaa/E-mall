@@ -8,6 +8,7 @@ data:
   POSTGRES_PASSWORD: 'password'
   POSTGRES_USER: 'postgres'
   CLIENT_KAFKA_GROUP: 'orderGroup'
+  ORDER_KAFKA_CONSUMER_ISOLATION_LEVEL: 'read_committed'
   MONGO_DB: 'e-mall'
   MONGO_PASSWORD: 'password'
   MONGO_USER: 'mongo'

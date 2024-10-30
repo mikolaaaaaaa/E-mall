@@ -1,10 +1,10 @@
 package by.mikola.order.config;
 
 import by.mikola.order.configprops.KafkaConfigProperties;
+import by.mikola.order.configprops.KafkaConsumerProperties;
 import by.mikola.order.dto.order.OrderCreateRequest;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +23,7 @@ import java.util.Map;
 public class KafkaConsumerConfig {
 
     private final KafkaConfigProperties kafkaConfigProperties;
+    private final KafkaConsumerProperties kafkaConsumerProperties;
 
     public static final String TOPIC = "emall-orders";
 
@@ -35,10 +36,8 @@ public class KafkaConsumerConfig {
         props.put(
                 ConsumerConfig.GROUP_ID_CONFIG,
                 kafkaConfigProperties.getGroupId());
-        props.put(
-                ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG,
-                true
-        );
+        props.put(ConsumerConfig.ISOLATION_LEVEL_CONFIG,
+                kafkaConsumerProperties.getLevel());
         props.put(
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
                 StringDeserializer.class);
@@ -60,4 +59,5 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(consumerFactory());
         return factory;
     }
+
 }
