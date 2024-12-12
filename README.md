@@ -37,6 +37,8 @@
 
 ## Установка и запуск
 
+### Docker
+
 1. Склонируйте репозиторий проекта с помощью команды:
 
    ```bash
@@ -55,39 +57,45 @@
    ./mvnw install
    ```
 
-4. Создайте Docker-образ базы данных PostgreSQL для приложения, используя Dockerfile, находящийся в
-   директории `docker/postgres`:
-
-   ```bash
-   docker build -t e-mall_db ./docker/postgresql/
-   ```
-5. Создайте Docker-образ client-сервиса для приложения, используя Dockerfile, находящийся в
+4. Создайте Docker-образ client-сервиса для приложения, используя Dockerfile, находящийся в
     директории `client/`:
 
    ```bash
    docker build -t client-service-image ./client/
    ```
 
-6. Создайте Docker-образ order-сервиса для приложения, используя Dockerfile, находящийся в
+5. Создайте Docker-образ order-сервиса для приложения, используя Dockerfile, находящийся в
    директории `order/`:
 
    ```bash
    docker build -t order-service-image ./order/
    ```
 
-7. Создайте Docker-образ Eureka Server для приложения, используя Dockerfile, находящийся в
+6. Создайте Docker-образ Eureka Server для приложения, используя Dockerfile, находящийся в
    директории `eureka-server/`:
 
    ```bash
    docker build -t eureka-server-image ./eureka-server/
    ```
 
-5. Запустите приложение с помощью Docker Compose командой:
+7. Запустите приложение с помощью Docker Compose командой:
 
    ```bash
+   set -a
+   source .env 
    docker-compose up
    ```
 
 - Eureka server доступен по URL - `http://localhost:8761/`
 - Swagger UI client-сервиса доступен по URL - `http://localhost:8081/client/api/swagger-ui/index.html`
 - Swagger UI order-сервиса доступен по URL - `http://localhost:8082/order/api/swagger-ui/index.html`
+
+### K8s (minikube)
+
+1. Выполните 5 пунктов из инструкции для Docker
+
+2. Запустите скрипт deploy.sh прежде дав ему права на выполнение
+   ```bash
+   chmod +x deploy.sh
+   ./deploy.sh
+   ```

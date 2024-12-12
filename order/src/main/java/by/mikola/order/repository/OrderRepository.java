@@ -1,7 +1,9 @@
 package by.mikola.order.repository;
 
-import by.mikola.order.entity.order.Order;
-import org.springframework.data.jpa.repository.JpaRepository;
+import by.mikola.order.entity.Order;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface OrderRepository extends JpaRepository<Order, Long> {
+@Repository
+public interface OrderRepository extends MongoRepository<Order, String> {
 }

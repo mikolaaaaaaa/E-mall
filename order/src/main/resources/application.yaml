@@ -6,10 +6,18 @@ server:
 spring:
   application:
     name: order-service
+  data:
+    mongodb:
+      authentication-database: admin
+      username: ${MONGO_USER}
+      password: ${MONGO_PASSWORD}
+      database: ${MONGO_DB}
+      port: ${MONGO_PORT}
+      host: ${MONGO_HOST}
   datasource:
-    username: postgres
-    password: password
-    url: jdbc:postgresql://e-mall_db:5432/e-mall
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://e-mall-db:5432/${POSTGRES_DB}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -19,13 +27,23 @@ spring:
     open-in-view: off
   springdoc:
     swagger-ui:
-      path: /swagger-ui
+      use-root-path: true
       tags-sorter: alpha
       operations-sorter: alpha
   cloud:
     compatibility-verifier:
       enabled: false
-
+  kafka:
+    bootstrap-servers: kafka:9092
+    group-id: ${ORDER_KAFKA_GROUP}
+    consumer:
+      properties:
+        isolation:
+          level: ${ORDER_KAFKA_CONSUMER_ISOLATION_LEVEL}
+        spring:
+          json:
+            trusted:
+              packages: "*"
 eureka:
   client:
     register-with-eureka: true
@@ -35,3 +53,11 @@ eureka:
   instance:
     hostname: localhost
     preferIpAddress: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always

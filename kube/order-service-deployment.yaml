@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+  namespace: emall
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-service
+  template:
+    metadata:
+      labels:
+        app: order-service
+    spec:
+      containers:
+        - image: order-service-image
+          name: order-service
+          envFrom:
+            - configMapRef:
+                name: emall-config
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8082
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /order/api/actuator/health
+              port: 8082
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /order/api/actuator/health
+              port: 8082
+            initialDelaySeconds: 10
+            periodSeconds: 5
+      volumes:
+        - name: config-volume
+          configMap:
+            name: emall-config
+      restartPolicy: Always

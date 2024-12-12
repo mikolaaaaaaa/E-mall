@@ -1,0 +1,348 @@
+Thread dump at 12:00.381.040
+
+* Thread group "InnocuousThreadGroup":
+
+  Thread "Keep-Alive-Timer":
+    at java.lang.Thread.sleep0(long)
+    at java.lang.Thread.sleep(long) (line: 509)
+    at sun.net.www.http.KeepAliveCache.run() (line: 238)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+    at jdk.internal.misc.InnocuousThread.run() (line: 186)* Thread group "eurekaTaskExecutors":
+
+  Thread "TaskAcceptor-eureka-server":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.AcceptorExecutor$AcceptorRunner.drainInputQueues() (line: 219)
+    at com.netflix.eureka.util.batcher.AcceptorExecutor$AcceptorRunner.run() (line: 178)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskAcceptor-target_eureka-server":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.AcceptorExecutor$AcceptorRunner.drainInputQueues() (line: 219)
+    at com.netflix.eureka.util.batcher.AcceptorExecutor$AcceptorRunner.run() (line: 178)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-0":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-1":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-10":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-11":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-12":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-13":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-14":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-15":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-16":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-17":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-18":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-19":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-2":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-3":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-4":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-5":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-6":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-7":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-8":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskBatchingWorker-target_eureka-server-9":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.getWork() (line: 203)
+    at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run() (line: 174)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "TaskNonBatchingWorker-eureka-server-0":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.LinkedBlockingQueue.poll(long, java.util.concurrent.TimeUnit) (line: 460)
+    at com.netflix.eureka.util.batcher.TaskExecutors$SingleTaskWorkerRunnable.run() (line: 233)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)* Thread group "main":
+
+  Thread "AsyncResolver-bootstrap-%d":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 1182)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 899)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "AsyncResolver-bootstrap-executor-%d":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.park() (line: 371)
+    at java.util.concurrent.SynchronousQueue$TransferStack$SNode.block() (line: 288)
+    at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3780)
+    at java.util.concurrent.ForkJoinPool.managedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3725)
+    at java.util.concurrent.SynchronousQueue$TransferStack.transfer(java.lang.Object, boolean, long) (line: 397)
+    at java.util.concurrent.SynchronousQueue.take() (line: 886)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "Catalina-utility-1":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 1182)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 899)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run() (line: 63)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "Catalina-utility-2":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.park() (line: 371)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block() (line: 519)
+    at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3780)
+    at java.util.concurrent.ForkJoinPool.managedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3725)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await() (line: 1707)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 1177)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 899)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run() (line: 63)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "DiscoveryClient-%d":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.park() (line: 371)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block() (line: 519)
+    at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3780)
+    at java.util.concurrent.ForkJoinPool.managedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3725)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await() (line: 1707)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 1177)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 899)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "DiscoveryClient-%d":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.parkNanos(java.lang.Object, long) (line: 269)
+    at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(long) (line: 1758)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 1182)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take() (line: 899)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "DiscoveryClient-CacheRefreshExecutor-%d":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.park() (line: 371)
+    at java.util.concurrent.SynchronousQueue$TransferStack$SNode.block() (line: 288)
+    at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3780)
+    at java.util.concurrent.ForkJoinPool.managedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3725)
+    at java.util.concurrent.SynchronousQueue$TransferStack.transfer(java.lang.Object, boolean, long) (line: 397)
+    at java.util.concurrent.SynchronousQueue.take() (line: 886)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (line: 642)
+    at java.lang.Thread.runWith(java.lang.Object, java.lang.Runnable) (line: 1596)
+    at java.lang.Thread.run() (line: 1583)
+
+  Thread "DiscoveryClient-HeartbeatExecutor-%d":
+    at jdk.internal.misc.Unsafe.park(boolean, long)
+    at java.util.concurrent.locks.LockSupport.park() (line: 371)
+    at java.util.concurrent.SynchronousQueue$TransferStack$SNode.block() (line: 288)
+    at java.util.concurrent.ForkJoinPool.unmanagedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3780)
+    at java.util.concurrent.ForkJoinPool.managedBlock(java.util.concurrent.ForkJoinPool$ManagedBlocker) (line: 3725)
+    at java.util.concurrent.SynchronousQueue$TransferStack.transfer(java.lang.Object, boolean, long) (line: 397)
+    at java.util.concurrent.SynchronousQueue.take() (line: 886)
+    at java.util.concurrent.ThreadPoolExecutor.getTask() (line: 1070)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(java.util.concurrent.ThreadPoolExecutor$Worker) (line: 1130)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run() (

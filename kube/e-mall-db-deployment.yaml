@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e-mall-db
+  namespace: emall
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: e-mall-db
+  template:
+    metadata:
+      labels:
+        app: e-mall-db
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: password
+            - name: POSTGRES_DB
+              value: e-mall
+          image: postgres:latest
+          name: e-mall-db
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+              protocol: TCP
+      restartPolicy: Always

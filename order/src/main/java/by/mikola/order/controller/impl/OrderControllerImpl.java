@@ -3,8 +3,6 @@ package by.mikola.order.controller.impl;
 import by.mikola.order.controller.OrderController;
 import by.mikola.order.dto.order.OrderCreateRequest;
 import by.mikola.order.dto.order.OrderDTO;
-import by.mikola.order.dto.order.OrderUpdateRequest;
-import by.mikola.order.entity.order.Order;
 import by.mikola.order.mapper.OrderMapper;
 import by.mikola.order.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +27,7 @@ public class OrderControllerImpl implements OrderController {
     }
 
     @Override
-    public OrderDTO getOrderById(Long id) {
+    public OrderDTO getOrderById(String id) {
         return mapper.toDto(orderService.getOrderById(id));
     }
 
@@ -39,16 +37,7 @@ public class OrderControllerImpl implements OrderController {
     }
 
     @Override
-    public OrderDTO updateOrder(Long orderId, OrderUpdateRequest updateRequest) {
-        log.info("Start update order with id {} using {}", orderId, updateRequest);
-        Order order = orderService.updateOrder(orderId, updateRequest);
-        log.info("Success update order with id {} using {}", orderId, updateRequest);
-        return mapper.toDto(order);
-    }
-
-    @Override
-    public void deleteOrder(Long id) {
+    public void deleteOrder(String id) {
         orderService.deleteOrder(id);
     }
-
 }
